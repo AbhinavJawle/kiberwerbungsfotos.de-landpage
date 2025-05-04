@@ -14,6 +14,8 @@ import {
   HStack,
   Icon,
   Center,
+  Divider,
+  Spacer,
 } from "@chakra-ui/react";
 import { CheckCircleIcon, CloseIcon } from "@chakra-ui/icons"; // Using Chakra icons for simplicity
 import { HiArrowRight } from "react-icons/hi";
@@ -75,9 +77,19 @@ function Vergleichen() {
           />
         </HStack>
 
-        <Heading as="h2" size="xl" fontWeight="black">
+        {/* <Heading as="h2" size="xl" fontWeight="black">
+        </Heading> */}
+        <Box
+          mb={3}
+          as="h2"
+          // Removed maxWidth="rem" as it seemed incomplete/incorrect
+          lineHeight={{ base: "2.3rem", sm: "3rem" }}
+          fontSize={{ base: "2rem", sm: "2.6rem" }}
+          fontWeight="black"
+          marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
+        >
           Wie Ihre Selfies zu professionellen Bewerbungsfotos werden
-        </Heading>
+        </Box>
 
         <Text
           fontSize={{ base: "md", md: "lg" }}
@@ -112,14 +124,15 @@ function Vergleichen() {
           <Heading size="lg" mb={4} textAlign="center">
             Mit Kibewerbungsfotos.de
           </Heading>
-          <Image
+          <Divider mb={5} />
+          {/* <Image
             src="/placeholder-gantt-1.png" // Replace with actual image path
             alt="HeadshotPro Prozess" // Translated alt text
             mb={6}
             borderRadius="md"
             boxShadow="sm"
             fallbackSrc="https://via.placeholder.com/400x200?text=HeadshotPro+Prozess" // Placeholder
-          />
+          /> */}
           <List spacing={3}>
             <NumberedListItem
               number="1"
@@ -172,14 +185,15 @@ function Vergleichen() {
           <Heading size="lg" mb={4} textAlign="center">
             Physisches Fotoshooting
           </Heading>
-          <Image
+          {/* <Image
             src="/placeholder-gantt-2.png" // Replace with actual image path
             alt="Physisches Fotoshooting Prozess" // Translated alt text
             mb={6}
             borderRadius="md"
             boxShadow="sm"
             fallbackSrc="https://via.placeholder.com/400x200?text=Physisches+Fotoshooting" // Placeholder
-          />
+          /> */}
+          <Divider mb={5} />
           <List spacing={1}>
             <FeatureListItem icon={CloseIcon} iconColor="red.500">
               Finden Sie einen Fotografen, der Ihnen gefällt

@@ -30,13 +30,13 @@ const HomePage = () => (
       mt={5}
       // marginLeft={{ base: 5 }}
     >
-      <b>1800+</b> Bewerbungsfotos für über <b>600+</b> zufriedene Kunden
+      <b>1800+</b> AI Bewerbungsfotos für über <b>600+</b> zufriedene Kunden
       gemacht
     </Box>
     <Features />
     <Bewerbungsfotosehen />
     <Vergleichen />
-    <Flex px={4} py={10} maxWidth="container.lg" width="100%" marginX="auto">
+    <Flex px={4} pt={10} maxWidth="container.lg" width="100%" marginX="auto">
       <Pricing />
     </Flex>
     <FaqPage />

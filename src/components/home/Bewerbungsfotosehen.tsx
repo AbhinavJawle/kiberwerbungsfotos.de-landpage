@@ -118,12 +118,18 @@ function Bewerbungsfotosehen() {
   return (
     <VStack textAlign={"center"}>
       <Box py={12} px={4}>
-        <Heading as="h2" size="xl" fontWeight="black" mb={8}>
+        <Heading
+          as="h2"
+          size="xl"
+          fontWeight="black"
+          mb={8}
+          lineHeight={{ base: "2rem", sm: "3rem" }}
+        >
           So könnten Ihre Bewerbungsfotos aussehen
         </Heading>
         <Button
           as={Link}
-          href="/login"
+          href="/#pricing"
           px={8}
           py={4}
           variant="brand" // Use your brand variant from theme
@@ -132,19 +138,32 @@ function Bewerbungsfotosehen() {
           rightIcon={<HiArrowRight />}
           mb={3}
         >
-          Nur für €19.99
+          Nur für €10
         </Button>
         <Box
           mb={8}
+          mt={3}
           as="h3"
           // Removed maxWidth="rem" as it seemed incomplete/incorrect
           lineHeight={{ base: "0.9rem", sm: "1.1rem" }}
-          fontSize={{ base: "0.6rem", sm: "0.8rem" }}
+          fontSize={{ base: "0.8rem", sm: "0.8rem" }}
           fontWeight="grey"
           marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
         >
           Die durchschnittlichen Kosten für professionelle Fotos <br />
-          in Deutschland belaufen sich auf €150 zu €500 pro person.
+          in Deutschland kostet{" "}
+          <Link
+            href={
+              "https://www.listando.de/content/was-kostet-ein-businessfotograf"
+            }
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+            style={{
+              textDecoration: "underline",
+            }}
+          >
+            €270
+          </Link>
         </Box>
 
         {/* Wrap Button in Flex for centering */}
@@ -172,7 +191,7 @@ function Bewerbungsfotosehen() {
             >
               <Image
                 src={`/headshots/${img}`}
-                alt={`Beispiel Bewerbungsfoto ${index + 1}`}
+                alt={`Beispiel KI Bewerbungsfoto ${index + 1}`}
                 objectFit="cover"
                 width="100%"
                 height="100%"

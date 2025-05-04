@@ -54,7 +54,7 @@ const EndCTA = () => {
               lineHeight={{ base: "xl", sm: "2xl" }}
               marginX="auto" // Add this to center the h2 Box itself
             >
-              KI Bewerbungsfotos, die Sie tatsächlich nutzen können, ohne in ein
+              Bewerbungsfotos, die Sie tatsächlich nutzen können, ohne in ein
               teures Studio zu gehen
             </Box>
           </Box>

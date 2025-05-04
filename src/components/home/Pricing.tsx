@@ -12,7 +12,7 @@ import {
   HStack, // Import HStack
 } from "@chakra-ui/react";
 import React from "react";
-import { CheckIcon, QuestionOutlineIcon } from "@chakra-ui/icons"; // Import CheckIcon and QuestionOutlineIcon
+import { CheckIcon } from "@chakra-ui/icons"; // Import CheckIcon and QuestionOutlineIcon
 import Link from "next/link"; // Import Link for buttons
 
 // Keep CheckedListItem if used elsewhere, or integrate directly
@@ -26,11 +26,6 @@ export const CheckedListItem = ({
     <Text as="span" flex="1">
       {children}
     </Text>
-    {/* {tooltipLabel && (
-      <Tooltip label={tooltipLabel} placement="top" hasArrow>
-        <Icon as={QuestionOutlineIcon} color="gray.500" ml={1} cursor="help" />
-      </Tooltip>
-    )} */}
   </ListItem>
 );
 
@@ -38,45 +33,36 @@ export const CheckedListItem = ({
 const pricingPlans = [
   {
     name: "Basic",
-    price: "€19.99",
-    description:
-      "Erhalten Sie 40 Headshots mit 4 einzigartigen Hintergründen und Outfits.",
+    price: "€10",
+    description: "Erhalten Sie 40 Headshots in 1 Stil.",
     features: [
-      { text: "40 Headshots" },
-      { text: "4 Hintergrund- & Outfit-Kombinationen" },
-      { text: "Hunderte von Stilen zur Auswahl" },
-      { text: "4 Bearbeitungsguthaben" },
+      { text: "40 KI Bewerbungsfotos" },
+      { text: "1 einzigartiger Stil" },
       { text: "20 Minuten Bearbeitungszeit" },
     ],
     buttonText: "Jetzt Erstellen",
     isFeatured: false,
   },
   {
-    name: "Professional",
-    price: "€24.99",
-    description:
-      "Erhalten Sie 100 Headshots mit 10 einzigartigen Hintergründen und Outfits.",
+    name: "Profissionell",
+    price: "€14.99",
+    description: "Erhalten Sie 80 Headshots in 2 Stil.",
     features: [
-      { text: "100 Headshots" },
-      { text: "10 Hintergrund- & Outfit-Kombinationen" },
-      { text: "Hunderte von Stilen zur Auswahl" },
-      { text: "10 Bearbeitungsguthaben" },
+      { text: "80 KI Bewerbungsfotos" },
+      { text: "2 einzigartiger Stil" },
       { text: "20 Minuten Bearbeitungszeit" },
     ],
     buttonText: "Jetzt Erstellen",
     isFeatured: true,
   },
   {
-    name: "Executive",
-    price: "€39.99",
-    description:
-      "Erhalten Sie 200 Headshots mit 20 einzigartigen Hintergründen und Outfits.",
+    name: "Expert",
+    price: "€19.99",
+    description: "Erhalten Sie 120 Headshots in 3 Stil.",
     features: [
-      { text: "200 Headshots" },
-      { text: "20 Hintergrund- & Outfit-Kombinationen" },
-      { text: "Hunderte von Stilen zur Auswahl" },
-      { text: "20 Bearbeitungsguthaben" },
-      { text: "20 Minutens Bearbeitungszeit" },
+      { text: "120 KI Bewerbungsfotos" },
+      { text: "3 einzigartiger Stil" },
+      { text: "20 Minuten Bearbeitungszeit" },
     ],
     buttonText: "Jetzt Erstellen",
     isFeatured: false,
@@ -92,11 +78,12 @@ const Pricing = () => {
         spacing={10}
         justifyContent="center"
         flexDirection="column"
+        id="pricing"
       >
         <Box textAlign={{ base: "center", sm: "center" }}>
           <Box
             mb={3}
-            as="h1"
+            as="h2"
             // Removed maxWidth="rem" as it seemed incomplete/incorrect
             lineHeight={{ base: "2.3rem", sm: "3rem" }}
             fontSize={{ base: "2rem", sm: "2.6rem" }}
@@ -106,17 +93,29 @@ const Pricing = () => {
             Professionelle Bewerbungsfotos zu einem Bruchteil der Kosten
           </Box>
           <Box
-            as="h2"
+            as="h3"
             maxWidth="50rem"
             fontSize={{ base: "xs", sm: "xl" }}
             lineHeight={{ base: "xl", sm: "2xl" }}
             marginX="auto" // Add this to center the h2 Box itself
           >
             Die durchschnittlichen Kosten für professionelle Fotos in
-            Deutschland belaufen sich auf €150 zu €500 pro person.
+            Deutschland belaufen sich auf{" "}
+            <Link
+              href={
+                "https://www.listando.de/content/was-kostet-ein-businessfotograf"
+              }
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              style={{
+                textDecoration: "underline",
+              }}
+            >
+              €185 zu €590 pro person.
+            </Link>
             {""}
             <br />
-            Unsere Angebote starten bei $29
+            <b>Unsere Angebote starten bei €10</b>
           </Box>
         </Box>
       </VStack>
@@ -129,7 +128,6 @@ const Pricing = () => {
         px={{ base: 2, md: 4 }}
         maxWidth="container.xl" // Changed from container.xl to match parent
         mx="auto"
-        id="pricing"
       >
         {pricingPlans.map((plan, index) => (
           <Box

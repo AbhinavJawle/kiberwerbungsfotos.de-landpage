@@ -6,12 +6,14 @@ import {
   IconButton,
   Text,
   Tooltip,
+  ListIcon,
 } from "@chakra-ui/react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { HiLogout } from "react-icons/hi";
 import { IoIosFlash } from "react-icons/io";
+import { CheckIcon } from "@chakra-ui/icons"; // Import CheckIcon and QuestionOutlineIcon
 
 const Header = ({ session }: { session: Session | null }) => {
   return (
@@ -37,7 +39,7 @@ const Header = ({ session }: { session: Session | null }) => {
             as={IoIosFlash}
           />
           <Text display={{ base: "none", sm: "inherit" }}>
-            KIBewerbungsfotos
+            KIBewerbungsfotos.de
           </Text>
         </Flex>
         <HStack spacing={1}>
@@ -45,7 +47,8 @@ const Header = ({ session }: { session: Session | null }) => {
             as={Link}
             href="/#pricing"
             colorScheme="beige"
-            variant="ghost"
+            variant="link"
+            mr={4}
             size="sm"
           >
             Kosten

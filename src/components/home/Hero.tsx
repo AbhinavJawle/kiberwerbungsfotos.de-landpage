@@ -1,3 +1,4 @@
+import { CheckIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -7,6 +8,9 @@ import {
   HStack,
   Image,
   Text,
+  ListItem,
+  ListIcon,
+  List,
 } from "@chakra-ui/react"; // Added HStack, Image, Text
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
@@ -59,16 +63,46 @@ const Hero = () => {
             >
               Steigere deinen Marktwert in Sekunden
             </Box>
-            <Box
+            {/* <Box
               as="h2"
               maxWidth="50rem"
-              fontSize={{ base: "xs", sm: "xl" }}
+              fontSize={{ base: "md", sm: "xl" }}
               lineHeight={{ base: "xl", sm: "2xl" }}
               marginX="auto" // Add this to center the h2 Box itself
             >
-              Moderne Bewerbungsfotos mit KI: Professionelle Bewerbungsfotos
-              selber machen – Kostenlos testen, im Handumdrehen erstellen
-            </Box>
+              <Text>
+                {" "}
+                Moderne Bewerbungsfotos mit KI: Professionelle Bewerbungsfotos
+                selber machen – Kostenlos testen, im Handumdrehen erstellen
+              </Text>
+            </Box> */}
+            <VStack>
+              <List>
+                <ListItem display="flex" alignItems="center">
+                  <Text as="span" flex="1">
+                    <CheckIcon color="green.500" mr={2} />
+                    Erstelle in 20 Minuten realistische Bewerbungsfotos mit KI
+                  </Text>
+                </ListItem>
+              </List>
+              <List>
+                <ListItem display="flex" alignItems="center">
+                  <Text as="span" flex="1">
+                    <CheckIcon color="green.500" mr={2} />
+                    Bereit für Lebenslauf, Linkedin, Indeed usw.
+                  </Text>
+                </ListItem>
+              </List>
+              <List>
+                <ListItem display="flex" alignItems="center">
+                  <Text as="span" flex="1">
+                    {" "}
+                    <CheckIcon color="green.500" mr={2} />
+                    Kostet nur €10
+                  </Text>
+                </ListItem>
+              </List>
+            </VStack>
           </Box>
           <Button
             as={Link}
@@ -85,7 +119,7 @@ const Hero = () => {
             as="h3"
             // Removed maxWidth="rem" as it seemed incomplete/incorrect
             lineHeight={{ base: "1.1rem", sm: "1.1rem" }}
-            fontSize={{ base: "0.7rem", sm: "1rem" }}
+            fontSize={{ base: "0.8rem", sm: "1rem" }}
             fontWeight="grey"
             marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
           >
