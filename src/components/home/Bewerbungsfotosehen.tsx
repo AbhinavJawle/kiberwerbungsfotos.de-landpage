@@ -117,26 +117,12 @@ function Bewerbungsfotosehen() {
   return (
     <VStack textAlign={"center"}>
       <Box py={12} px={4}>
-        <Heading as="h2" size="xl" fontWeight="semibold" mb={3}>
+        <Heading as="h2" size="xl" fontWeight="black" mb={8}>
           So könnten Ihre Bewerbungsfotos aussehen
         </Heading>
 
         {/* Wrap Button in Flex for centering */}
-        <Flex justifyContent="center" mb={8}>
-          <Button
-            as={Link}
-            href="/dashboard"
-            variant="brand"
-            size="md"
-            shadow="md"
-            // mt={4} // Removed mt as Flex handles spacing
-            // mb={8} // Moved mb to Flex container
-            // marginX={"auto"} // Removed marginX
-            rightIcon={<HiArrowRight />}
-          >
-            Bewerbungsfotos erstellen
-          </Button>
-        </Flex>
+
         <SimpleGrid
           columns={{ base: 2, sm: 3, md: 4, lg: 5 }} // Responsive columns
           spacing={{ base: 3, md: 4 }} // Responsive spacing

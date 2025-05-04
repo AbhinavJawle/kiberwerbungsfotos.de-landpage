@@ -138,11 +138,16 @@ function Beispielen() {
             <Box
               key={`${img}-${index}`}
               className={`flex-shrink-0 w-32 h-48 mx-1`}
+              transition="transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out" // Add transition
+              _hover={{
+                transform: "scale(1.05)", // Scale up on hover
+                shadow: "md", // Optionally add/increase shadow on hover
+              }}
             >
               <img
                 src={`/headshots/${img}`}
                 alt={`Headshot example ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg shadow-sm" // Reduced shadow
+                className="w-full h-full object-cover rounded-lg shadow-sm" // Initial shadow
               />
             </Box>
           ))}

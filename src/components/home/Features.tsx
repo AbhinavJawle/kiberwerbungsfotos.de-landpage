@@ -8,7 +8,9 @@ interface ItemProps {
 }
 
 const Item = ({ iconName, title, children }: ItemProps) => (
-  <Flex alignItems="center" direction="column" p={{ base: 0.5, md: 2 }}> {/* Reduced md padding */}
+  <Flex alignItems="center" direction="column" p={{ base: 0.5, md: 2 }}>
+    {" "}
+    {/* Reduced md padding */}
     <Image
       alt="logo"
       width={{ base: "3.5rem", md: "6rem" }} // Reduced md width
@@ -36,7 +38,14 @@ const Item = ({ iconName, title, children }: ItemProps) => (
 
 const Features = () => {
   return (
-    <Flex width="100%" backgroundColor="whiteAlpha.900" py={{ base: 4, md: 6 }} flex="1"> {/* Reduced py */}
+    <Flex
+      width="100%"
+      backgroundColor="whiteAlpha.900"
+      py={{ base: 4, md: 6 }}
+      flex="1"
+    >
+      {" "}
+      {/* Reduced py */}
       <Flex
         px={{ base: 1, lg: 0 }}
         py={1} // Kept py low for inner container
