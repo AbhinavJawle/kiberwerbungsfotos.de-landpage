@@ -1,49 +1,73 @@
-import { Box, Button, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  SimpleGrid,
+  VStack,
+  HStack,
+  Image,
+  Text,
+} from "@chakra-ui/react"; // Added HStack, Image, Text
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
-import Demo from "./Demo";
+// import Demo from "./Demo";
 
 const Hero = () => {
   return (
-    <Box px={{ base: 2, md: 6 }}>
+    <Box px={{ base: 2, md: 2 }}>
       <SimpleGrid
         as="main"
         minHeight="30rem"
         flex="1"
         flexDirection="column"
-        marginX="auto"
-        maxWidth="container.lg"
-        columns={{ base: 1, lg: 2 }}
-        px={{ base: 4, lg: 0 }}
-        py={{ base: 10, lg: 0 }}
-        gap={{ base: 10, lg: 0 }}
+        marginX="auto" // Keep this for overall centering
+        maxWidth="container.md"
+        columns={{ base: 1, lg: 1 }}
+        px={{ base: 4, lg: 4 }}
+        py={{ base: 10, lg: 10 }}
+        gap={{ base: 10, lg: 10 }}
+        marginTop={{ base: 1, lg: 4 }}
       >
         <VStack
           className="color"
-          alignItems={{ base: "center", sm: "flex-start" }}
+          alignItems={{ base: "center", sm: "center" }}
           spacing={10}
           justifyContent="center"
           flexDirection="column"
         >
-          <Box textAlign={{ base: "center", sm: "left" }}>
+          <Box textAlign={{ base: "center", sm: "center" }}>
+            <Box
+              mb={3}
+              as="h3"
+              // Removed maxWidth="rem" as it seemed incomplete/incorrect
+              lineHeight={{ base: "1.1rem", sm: "1.1rem" }}
+              fontSize={{ base: "0.7rem", sm: "1rem" }}
+              fontWeight="grey"
+              marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
+            >
+              Der <b>#1</b> KI Bewerbungsfoto-Generator für professionelle {""}
+              Bewerbungsfotos.
+            </Box>
             <Box
               mb={3}
               as="h1"
-              maxWidth="43rem"
-              lineHeight={{ base: "2.6rem", sm: "4rem" }}
-              fontSize={{ base: "2.6rem", sm: "4rem" }}
+              // Removed maxWidth="rem" as it seemed incomplete/incorrect
+              lineHeight={{ base: "2.3rem", sm: "3rem" }}
+              fontSize={{ base: "2rem", sm: "2.6rem" }}
               fontWeight="black"
+              marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
             >
-              Your AI avatar generator
+              Steigere deinen Marktwert in Sekunden
             </Box>
             <Box
               as="h2"
-              maxWidth="30rem"
-              fontSize={{ base: "xl", sm: "3xl" }}
-              lineHeight={{ base: "xl", sm: "3xl" }}
+              maxWidth="50rem"
+              fontSize={{ base: "xs", sm: "xl" }}
+              lineHeight={{ base: "xl", sm: "2xl" }}
+              marginX="auto" // Add this to center the h2 Box itself
             >
-              <b>Generate avatars</b> that perfectly capture{" "}
-              <b>your unique style</b>
+              Moderne Bewerbungsfotos mit KI: Professionelle Bewerbungsfotos
+              selber machen – Kostenlos testen, im Handumdrehen erstellen
             </Box>
           </Box>
           <Button
@@ -54,12 +78,40 @@ const Hero = () => {
             shadow="xl"
             rightIcon={<HiArrowRight />}
           >
-            Start Creating Now
+            Bewerbungsfotos erstellen
           </Button>
+          <Box
+            mb={3}
+            as="h3"
+            // Removed maxWidth="rem" as it seemed incomplete/incorrect
+            lineHeight={{ base: "1.1rem", sm: "1.1rem" }}
+            fontSize={{ base: "0.7rem", sm: "1rem" }}
+            fontWeight="grey"
+            marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
+          >
+            Bewerbungsfoto machen Sie selber!
+          </Box>
+
+          {/* Trustpilot Rating Section */}
+          <HStack spacing={2} alignItems="center">
+            <Image
+              src="/trustpilot-stars.svg" // Added the .svg extension here
+              alt="Trustpilot 4.8 stars"
+              height={{ base: "20px", sm: "24px" }}
+            />
+            <Text fontSize={{ base: "0.8rem", sm: "1rem" }} fontWeight="medium">
+              Rated <b>4.8</b> out of <b>5</b> on
+            </Text>
+            <Image
+              src="/logo-trustpilot.png"
+              alt="Trustpilot logo"
+              height={{ base: "20px", sm: "24px" }}
+            />
+          </HStack>
         </VStack>
-        <Flex alignItems="center">
+        {/* <Flex alignItems="center">
           <Demo />
-        </Flex>
+        </Flex> */}
       </SimpleGrid>
     </Box>
   );

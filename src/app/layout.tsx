@@ -1,6 +1,7 @@
 import Providers from "@/components/Providers";
 import { getSession } from "@/lib/sessions";
 import { Metadata } from "next";
+import "@/global.css"; // Import global CSS here
 
 type Props = {
   children: React.ReactNode;

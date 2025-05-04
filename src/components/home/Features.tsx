@@ -8,16 +8,26 @@ interface ItemProps {
 }
 
 const Item = ({ iconName, title, children }: ItemProps) => (
-  <Flex alignItems="center" direction="column" p={4}>
-    <Image alt="logo" width="8rem" src={iconName} />
-    <Text textAlign="center" fontWeight="900" fontSize="2xl" mt={3}>
+  <Flex alignItems="center" direction="column" p={{ base: 0.5, md: 2 }}> {/* Reduced md padding */}
+    <Image
+      alt="logo"
+      width={{ base: "3.5rem", md: "6rem" }} // Reduced md width
+      src={iconName}
+    />
+    <Text
+      textAlign="center"
+      fontWeight="900"
+      fontSize={{ base: "sm", md: "xl" }} // Reduced md font size
+      mt={{ base: 1, md: 2 }} // Reduced md margin top
+    >
       {title}
     </Text>
     <Text
-      maxWidth={{ base: "20rem", lg: "13rem" }}
-      mt={2}
+      maxWidth={{ base: "95%", md: "90%" }} // Adjusted md max width
+      mt={{ base: 0.5, md: 1 }} // Reduced md margin top
       textAlign="center"
-      fontSize="lg"
+      fontSize={{ base: "xs", md: "md" }} // Reduced md font size
+      lineHeight={{ base: 1.2, md: 1.3 }} // Adjusted md line height
     >
       {children}
     </Text>
@@ -26,25 +36,30 @@ const Item = ({ iconName, title, children }: ItemProps) => (
 
 const Features = () => {
   return (
-    <Flex width="100%" backgroundColor="whiteAlpha.900" py={10} flex="1">
+    <Flex width="100%" backgroundColor="whiteAlpha.900" py={{ base: 4, md: 6 }} flex="1"> {/* Reduced py */}
       <Flex
-        px={{ base: 4, lg: 0 }}
-        py={4}
+        px={{ base: 1, lg: 0 }}
+        py={1} // Kept py low for inner container
         width="100%"
         flexDirection="column"
         margin="auto"
         maxWidth="container.lg"
       >
-        <SimpleGrid mb={10} columns={{ base: 1, md: 3 }}>
-          <Item iconName="publish.svg" title="1. Upload">
-            Upload <b>some selfies</b> of you (or other person) with different
-            angles
+        <SimpleGrid
+          mb={{ base: 4, md: 6 }} // Reduced mb
+          columns={{ base: 3, md: 3 }}
+          spacing={{ base: 0.5, md: 2 }} // Reduced md spacing
+        >
+          {" "}
+          {/* Changed columns to 1 on base, added spacing */}
+          <Item iconName="publish.svg" title="1. Hochladen">
+            Laden Sie einige Selfies von Ihnen hoch
           </Item>
-          <Item iconName="square.svg" title="2. Wait">
-            Take a coffee break while we build <b>your studio</b> based on your photos
+          <Item iconName="square.svg" title="2. Warten">
+            Unsere KI wird Ihre Fotos verarbeiten
           </Item>
-          <Item iconName="preview.svg" title="3. Prompt">
-            Use your imagination to craft the <b>perfect prompt!</b>
+          <Item iconName="preview.svg" title="3. Herunterladen">
+            Bewerbungsfoto wählen und herunterladen
           </Item>
         </SimpleGrid>
       </Flex>
