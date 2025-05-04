@@ -36,17 +36,28 @@ const Header = ({ session }: { session: Session | null }) => {
             _groupHover={{ color: "brand.500" }}
             as={IoIosFlash}
           />
-          <Text display={{ base: "none", sm: "inherit" }}>Photoshot.</Text>
+          <Text display={{ base: "none", sm: "inherit" }}>
+            KIBewerbungsfotos
+          </Text>
         </Flex>
         <HStack spacing={1}>
           <Button
             as={Link}
-            href="/prompts"
+            href="/#pricing"
             colorScheme="beige"
             variant="ghost"
             size="sm"
           >
-            Prompts
+            Kosten
+          </Button>
+          <Button
+            as={Link}
+            href="/login"
+            colorScheme="beige"
+            variant="brand"
+            size="sm"
+          >
+            Erstellen
           </Button>
           {session ? (
             <>
@@ -78,8 +89,14 @@ const Header = ({ session }: { session: Session | null }) => {
               </Tooltip>
             </>
           ) : (
-            <Button href="/login" as={Link} variant="brand" size="sm">
-              Login
+            <Button
+              href="/login"
+              as={Link}
+              variant="ghost"
+              colorScheme="beige"
+              size="sm"
+            >
+              Anmelden
             </Button>
           )}
         </HStack>

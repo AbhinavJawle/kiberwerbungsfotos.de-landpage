@@ -56,7 +56,7 @@ const NumberedListItem = ({ number, title, description }: any) => (
 
 function Vergleichen() {
   return (
-    <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }} bg="white">
+    <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 12 }} bg="white">
       <VStack spacing={4} textAlign="center" mb={{ base: 8, md: 12 }}>
         {/* Trustpilot Rating */}
         <HStack spacing={2} alignItems="center" justifyContent="center">
@@ -78,6 +78,7 @@ function Vergleichen() {
         <Heading as="h2" size="xl" fontWeight="black">
           Wie Ihre Selfies zu professionellen Bewerbungsfotos werden
         </Heading>
+
         <Text
           fontSize={{ base: "md", md: "lg" }}
           color="gray.600"
@@ -214,7 +215,7 @@ function Vergleichen() {
       <Center mt={{ base: 8, md: 12 }}>
         <Button
           as={Link}
-          href="/dashboard" // Adjust link as needed
+          href="/login" // Adjust link as needed
           variant="brand" // Use your brand variant from theme
           size="md"
           shadow="xl"

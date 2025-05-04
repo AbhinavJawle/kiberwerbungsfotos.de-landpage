@@ -10,6 +10,7 @@ import Beispielen from "../home/Beispielen";
 import Bewerbungsfotosehen from "../home/Bewerbungsfotosehen";
 import Vergleichen from "../home/Vergleichen";
 import { Box } from "@chakra-ui/react";
+import EndCTA from "../home/EndCTA";
 const HomePage = () => (
   <>
     <Flex flexDirection="column" flex="1">
@@ -39,6 +40,7 @@ const HomePage = () => (
       <Pricing />
     </Flex>
     <FaqPage />
+    <EndCTA />
   </>
 );
 

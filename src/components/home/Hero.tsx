@@ -72,7 +72,7 @@ const Hero = () => {
           </Box>
           <Button
             as={Link}
-            href="/dashboard"
+            href="/login"
             variant="brand"
             size="lg"
             shadow="xl"

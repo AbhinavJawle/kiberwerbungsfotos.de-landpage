@@ -113,7 +113,7 @@ const imageHeightRem = 12; // Corresponds to h-48
 const totalMarginXRem = 0.5; // Correct total horizontal margin per image
 
 const totalImageWidthRem = imageWidthRem + totalMarginXRem; // Corrected calculation
-const animationDurationSeconds = 80;
+const animationDurationSeconds = 100;
 
 function Beispielen() {
   // Shuffle images on each render

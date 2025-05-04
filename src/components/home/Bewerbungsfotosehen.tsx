@@ -123,7 +123,7 @@ function Bewerbungsfotosehen() {
         </Heading>
         <Button
           as={Link}
-          href="/kontakt"
+          href="/login"
           px={8}
           py={4}
           variant="brand" // Use your brand variant from theme
