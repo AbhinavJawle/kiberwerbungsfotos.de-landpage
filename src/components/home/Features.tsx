@@ -65,7 +65,7 @@ const Features = () => {
             Laden Sie einige Selfies von Ihnen hoch
           </Item>
           <Item iconName="square.svg" title="2. Warten">
-            Unsere KI wird Ihre Fotos verarbeiten
+            Unsere KI wird Ihre Fotos in 20 Minuten verarbeiten
           </Item>
           <Item iconName="preview.svg" title="3. Herunterladen">
             Bewerbungsfoto wählen und herunterladen

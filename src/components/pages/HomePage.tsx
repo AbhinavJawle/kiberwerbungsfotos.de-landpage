@@ -24,9 +24,10 @@ const HomePage = () => (
       lineHeight={{ base: "1.1rem", sm: "1.1rem" }}
       fontSize={{ base: "0.8rem", sm: "1.1rem" }}
       fontWeight="normal"
-      marginX="auto"
+      marginX={{ base: 5, sm: 16 }}
+      textAlign="center"
       mt={5}
-      // Added marginX="auto" for good measure, though parent textAlign should handle it
+      // marginLeft={{ base: 5 }}
     >
       <b>1800+</b> Bewerbungsfotos für über <b>600+</b> zufriedene Kunden
       gemacht

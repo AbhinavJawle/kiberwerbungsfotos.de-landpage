@@ -140,7 +140,7 @@ function Beispielen() {
               className={`flex-shrink-0 w-32 h-48 mx-1`}
               transition="transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out" // Add transition
               _hover={{
-                transform: "scale(1.05)", // Scale up on hover
+                // transform: "scale(1.05)", // Scale up on hover
                 shadow: "md", // Optionally add/increase shadow on hover
               }}
             >

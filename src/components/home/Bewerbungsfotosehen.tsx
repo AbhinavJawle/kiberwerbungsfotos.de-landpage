@@ -7,7 +7,8 @@ import {
   Button,
   Flex,
   VStack,
-} from "@chakra-ui/react"; // Import Flex
+  Badge, // Import Badge
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 
@@ -120,6 +121,31 @@ function Bewerbungsfotosehen() {
         <Heading as="h2" size="xl" fontWeight="black" mb={8}>
           So könnten Ihre Bewerbungsfotos aussehen
         </Heading>
+        <Button
+          as={Link}
+          href="/kontakt"
+          px={8}
+          py={4}
+          variant="brand" // Use your brand variant from theme
+          size="md"
+          shadow="xl"
+          rightIcon={<HiArrowRight />}
+          mb={3}
+        >
+          Nur für €19.99
+        </Button>
+        <Box
+          mb={8}
+          as="h3"
+          // Removed maxWidth="rem" as it seemed incomplete/incorrect
+          lineHeight={{ base: "0.9rem", sm: "1.1rem" }}
+          fontSize={{ base: "0.6rem", sm: "0.8rem" }}
+          fontWeight="grey"
+          marginX="auto" // Added marginX="auto" for good measure, though parent textAlign should handle it
+        >
+          Die durchschnittlichen Kosten für professionelle Fotos <br />
+          in Deutschland belaufen sich auf €150 zu €500 pro person.
+        </Box>
 
         {/* Wrap Button in Flex for centering */}
 
@@ -132,13 +158,17 @@ function Bewerbungsfotosehen() {
           {imagesToShow.map((img, index) => (
             <Box
               key={index}
-              position="relative"
+              position="relative" // Ensure parent is relative for absolute positioning
               overflow="hidden"
               borderRadius="lg"
               boxShadow="md"
-              aspectRatio={3 / 4}
-              // Conditionally hide the 15th item (index 14) on smaller screens
               display={index === 14 ? { base: "none", lg: "block" } : "block"}
+              _hover={{
+                boxShadow: "lg",
+                transform: "scale(1.05)",
+                transition: "all 0.3s ease",
+                zIndex: 1,
+              }}
             >
               <Image
                 src={`/headshots/${img}`}
@@ -147,7 +177,20 @@ function Bewerbungsfotosehen() {
                 width="100%"
                 height="100%"
               />
-              {/* Optional: Add overlay icon here if needed later */}
+              {/* KI Tag */}
+              <Badge
+                position="absolute"
+                bottom="2" // Adjust spacing from bottom
+                right="2" // Adjust spacing from right
+                variant="solid" // Use solid variant for background
+                colorScheme="brand" // Use brand color scheme
+                fontSize="xx-small" // Make text very small
+                px={1.5} // Horizontal padding
+                py={0.5} // Vertical padding
+                borderRadius="md" // Rounded corners
+              >
+                KI generiert
+              </Badge>
             </Box>
           ))}
         </SimpleGrid>
